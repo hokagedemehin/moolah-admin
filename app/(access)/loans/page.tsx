@@ -3,7 +3,7 @@ import React from "react";
 import { Typography } from "@/components/index";
 const LoanPage = () => {
   return (
-    <div>
+    <div className="bg-background">
       <Typography variant="h4" className="font-outfit text-black">
         Loan Page
       </Typography>

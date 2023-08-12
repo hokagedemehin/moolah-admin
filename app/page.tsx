@@ -1,17 +1,34 @@
 "use client";
 
-import { StyledEngineProvider } from "@mui/material/styles";
 import TopBarProgress from "react-topbar-progress-indicator";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useState } from "react";
-import { Router } from "next/router";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { CssBaseline } from "@mui/material";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import HomePage from "@/screens/HomePage";
+import { useRouter } from "next/router";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export default function Home() {
+  const [progress, setProgress] = useState(false);
+
+  const router = useRouter();
+
+  router.events.on("routeChangeError", () => {
+    console.log("routeChangeError");
+    setProgress(false);
+  });
+
+  router.events.on("routeChangeStart", () => {
+    console.log("routeChangeStart");
+    setProgress(true);
+  });
+
+  router.events.on("routeChangeComplete", () => {
+    console.log("routeChangeComplete");
+    setProgress(false);
+  });
+
   const theme = createTheme({
     breakpoints: {
       keys: ["xs", "sm", "md", "lg", "xl", "2xl"],
@@ -29,19 +46,6 @@ export default function Home() {
     },
   });
 
-  const [progress, setProgress] = useState(false);
-
-  Router.events.on("routeChangeStart", () => {
-    console.log("routeChangeStart");
-    setProgress(true);
-  });
-
-  Router.events.on("routeChangeComplete", () => {
-    setProgress(false);
-  });
-
-  const queryClient = new QueryClient();
-
   TopBarProgress.config({
     barColors: {
       "0": "#29d",
@@ -50,20 +54,18 @@ export default function Home() {
     },
     shadowBlur: 5,
   });
+  const queryClient = new QueryClient();
 
   return (
     <>
       {progress && <TopBarProgress />}
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <QueryClientProvider client={queryClient}>
-              <HomePage />
-            </QueryClientProvider>
-          </LocalizationProvider>
-        </ThemeProvider>
-      </StyledEngineProvider>
+      <ThemeProvider theme={theme}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <QueryClientProvider client={queryClient}>
+            <HomePage />
+          </QueryClientProvider>
+        </LocalizationProvider>
+      </ThemeProvider>
     </>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Typography } from "@/components/index";
+import { Typography } from "@mui/material";
 import {
   DesktopSVGComponent,
   LoanDisbursedSVGComponent,
@@ -33,7 +33,7 @@ const DesktopSideNavComp = () => {
             Good Morning, Seun
           </Typography>
           <Typography
-            variant="body2"
+            variant="h5"
             className="font-outfit text-xl font-bold text-black"
           >
             Dashboard

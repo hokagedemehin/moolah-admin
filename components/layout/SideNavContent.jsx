@@ -13,7 +13,7 @@ const SideNavContentComp = () => {
 
   return (
     <div>
-      <div className="min-h-[75vh] space-y-5 !border-none">
+      <div className="min-h-[75vh] space-y-5">
         {/* home */}
         <div className="">
           <Link

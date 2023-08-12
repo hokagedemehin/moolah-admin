@@ -7,6 +7,7 @@ module.exports = {
     "./lib/**/*.{js,ts,jsx,tsx,mdx}",
     "./screens/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  // important: "#root",
   theme: {
     extend: {
       fontFamily: {

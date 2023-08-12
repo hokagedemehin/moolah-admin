@@ -1,5 +1,5 @@
 'use client';
-import { configureStore, Action } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { sideNavSlice } from "./slices/sideNavSlice";
 import { useDispatch, useSelector  } from 'react-redux'
 import type { TypedUseSelectorHook } from 'react-redux'

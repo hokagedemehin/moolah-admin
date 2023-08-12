@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import React from "react";
+import { StyledEnginesProviders } from "@/util/MUIProvider";
 
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
@@ -36,7 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${outfit.variable}`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <StyledEnginesProviders>{children}</StyledEnginesProviders>
+        </Providers>
       </body>
     </html>
   );
