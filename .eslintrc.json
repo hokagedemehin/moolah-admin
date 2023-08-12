@@ -1,3 +1,27 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "next/core-web-vitals",
+    // "plugin:react-hooks/recommended",
+    "eslint-config-next"
+  ],
+  "plugins": ["react", "unused-imports"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    // "react/no-unused-vars": "error",
+    "unused-imports/no-unused-imports": "error"
+    // "unused-imports/no-unused-vars": [
+    //   "warn",
+    //   {
+    //     "vars": "all",
+    //     "varsIgnorePattern": "^_",
+    //     "args": "after-used",
+    //     "argsIgnorePattern": "^_"
+    //   }
+    // ]
+  }
 }

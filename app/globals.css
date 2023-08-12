@@ -16,12 +16,49 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.dash_sidebar {
+  overflow-y: scroll;
+  max-height: 90vh;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.dash_sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.dash_sidebar {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.page_content {
+  overflow-y: scroll;
+  max-height: 78vh;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.page_content::-webkit-scrollbar {
+  display: none;
+}
+
+.page_content {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.page_content_network {
+  overflow-y: scroll;
+  max-height: 74vh;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.page_content_network::-webkit-scrollbar {
+  display: none;
+}
+
+.page_content_network {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
