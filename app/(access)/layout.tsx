@@ -26,29 +26,6 @@ import Link from "next/link";
 import MobileNavContent from "@/components/layout/MobileNavContent";
 // import { useRouter } from "next/navigation";
 import SideNavContentComp from "@/components/layout/SideNavContent";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Moolah Admin",
-  description: "Tracking all activities of the Moolah App",
-  metadataBase: new URL("https://moolah-app.vercel.app/"),
-  openGraph: {
-    title: "Moolah Admin",
-    description: "Tracking all activities of the Moolah App",
-    type: "website",
-    locale: "en_US",
-    url: "https://moolah-app.vercel.app/",
-    siteName: "Moolah Admin",
-    images: [
-      {
-        url: "https://res.cloudinary.com/dfmtuwgcf/image/upload/v1691479961/Property_1_Moolah_1_u9kzq7.png",
-        width: 800,
-        height: 600,
-        alt: "Moolah Admin",
-      },
-    ],
-  },
-};
 
 const drawerWidth = 220;
 
