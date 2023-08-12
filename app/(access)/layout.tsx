@@ -291,7 +291,7 @@ export default function MainLayout({
         <div className=" hidden md:flex">
           <SideNavContentComp />
         </div>
-        <div className="page_content ">{children}</div>
+        <div className="page_content max-w-screen-xl ">{children}</div>
       </div>
       <Drawer anchor="left" open={mobileOpen} onClose={handleMobileClose}>
         <MobileNavContent handleMobileClose={handleMobileClose} />
