@@ -293,22 +293,6 @@ const AllUsersComp = () => {
             />
           </div>
         </Box>
-        {/* <div
-          style={{
-            height: 371.2,
-            width: 500,
-            backgroundColor: "white",
-          }}
-          // className="mt-5 h-[23.2rem] bg-white"
-        >
-          <div
-            style={{
-              width: 400,
-            }}
-            className="h-[23.2rem]"
-          ></div>
-          
-        </div> */}
       </div>
     </div>
   );
